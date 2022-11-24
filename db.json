@@ -1,0 +1,54 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "name": "Salary",
+      "amount": 50000
+    },
+    {
+      "id": 2,
+      "name": "UPI",
+      "amount": -100
+    },
+    {
+      "id": 3,
+      "name": "Cash",
+      "amount": -50
+    },
+    {
+      "id": 4,
+      "name": "NEFT",
+      "amount": -10000
+    },
+    {
+      "id": 5,
+      "name": "UPI",
+      "amount": 5000
+    },
+    {
+      "id": 6,
+      "name": "UPI",
+      "amount": -15000
+    },
+    {
+      "id": 7,
+      "name": "UPI",
+      "amount": -500
+    },
+    {
+      "id": 8,
+      "name": "UPI",
+      "amount": -5000
+    },
+    {
+      "name": "cash",
+      "amount": 10000,
+      "id": 9
+    },
+    {
+      "name": "upi",
+      "amount": -1000,
+      "id": 10
+    }
+  ]
+}
