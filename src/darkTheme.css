@@ -1,0 +1,19 @@
+body{
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
+
+.card{
+    background-color: var(--bs-dark);
+}
+
+.pnl{
+    box-shadow: 0px 0px 1px 0px var(--bs-light);
+}
+
+.form-control, .form-control:focus{
+    background-color: var(--bs-dark);
+    box-shadow: 0px 0px 1px 0px var(--bs-light);
+    border: none;
+    color: var(--bs-light)
+}

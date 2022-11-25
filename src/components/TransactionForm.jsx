@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import CurrencyFormat from "react-currency-format";
+import { GlobalContext } from "../context/GlobalProvider";
 
-export default function TransactionForm({ addTransaction }) {
+export default function TransactionForm() {
+  const {addTransaction} = useContext(GlobalContext);
   const [text, setText] = useState("");
   const [amount, setAmount] = useState("");
   const [floatAmount, setFloatAmount] = useState(0.0);
