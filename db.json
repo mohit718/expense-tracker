@@ -1,6 +1,11 @@
 {
   "transactions": [
     {
+      "id": 1,
+      "name": "Salary",
+      "amount": 50000
+    },
+    {
       "id": 2,
       "name": "UPI",
       "amount": -100
@@ -16,9 +21,24 @@
       "amount": -10000
     },
     {
+      "id": 5,
+      "name": "UPI",
+      "amount": 5000
+    },
+    {
       "id": 6,
       "name": "UPI",
       "amount": -15000
+    },
+    {
+      "id": 7,
+      "name": "UPI",
+      "amount": -500
+    },
+    {
+      "id": 8,
+      "name": "UPI",
+      "amount": -5000
     },
     {
       "name": "cash",
@@ -26,14 +46,9 @@
       "id": 9
     },
     {
-      "name": "Salary",
-      "amount": 50000,
-      "id": 10
-    },
-    {
-      "name": "UPI",
+      "name": "upi",
       "amount": -1000,
-      "id": 11
+      "id": 10
     }
   ]
 }

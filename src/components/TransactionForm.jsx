@@ -3,7 +3,7 @@ import CurrencyFormat from "react-currency-format";
 import { GlobalContext } from "../context/GlobalProvider";
 
 export default function TransactionForm() {
-  const {addTransaction} = useContext(GlobalContext);
+  const { addTransaction } = useContext(GlobalContext);
   const [text, setText] = useState("");
   const [amount, setAmount] = useState("");
   const [floatAmount, setFloatAmount] = useState(0.0);
@@ -21,7 +21,7 @@ export default function TransactionForm() {
   };
 
   return (
-    <div className="text-start my-4">
+    <div className="text-start my-4 card p-3 pnl">
       <h6 className="fw-bold">Add New Transaction</h6>
       <hr className="my-1" />
       <form onSubmit={onSubmit}>
@@ -47,7 +47,13 @@ export default function TransactionForm() {
             </small>
           </label>
           <CurrencyFormat
-            className="form-control"
+            className={`form-control ${
+              (Number.isInteger(floatAmount)&&floatAmount!==0)
+                ? floatAmount > 0
+                  ? "label-success"
+                  : "label-danger"
+                : "label-secondary"
+            }`}
             id="amount"
             aria-describedby="amountHelp"
             placeholder="Enter Amount"
@@ -62,7 +68,7 @@ export default function TransactionForm() {
           />
         </div>
         <div className="d-grid gap-2 col-4 mx-auto">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-outline-light">
             Submit
           </button>
         </div>

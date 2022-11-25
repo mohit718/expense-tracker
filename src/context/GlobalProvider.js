@@ -1,49 +1,30 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useState } from "react";
 import { TransactionService } from "../services/TransactionService";
-import AppReducer from "./AppReducer";
-
-const initialState = {
-  transactions: [],
-};
 
 // Global context
+const initialState = [];
 export const GlobalContext = createContext(initialState);
 
 // Global State
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [transactions, setTransactions] = useState(initialState);
 
   useEffect(() => {
-    TransactionService.fetchAll().then(transactions => {
-      dispatch({
-        type: "INIT_TRANSACTIONS",
-        payload: transactions,
-      });
-    });
+    TransactionService.fetchAll().then(t =>setTransactions(t));
   }, []);
 
   function addTransaction(transaction) {
-    TransactionService.save(transaction).then(t => {
-      dispatch({
-        type: "ADD_TRANSACTION",
-        payload: transaction,
-      });
-    });
+    TransactionService.save(transaction).then(t => setTransactions([...transactions, t]));
   }
 
   function deleteTransaction(id) {
-    TransactionService.delete(id).then(oldTransaction=>{
-      dispatch({
-        type: "DELETE_TRANSACTION",
-        payload: id,
-      })
-    });
+    TransactionService.delete(id).then(() => setTransactions(transactions.filter(t => t.id !== id)));
   }
 
   return (
     <GlobalContext.Provider
       value={{
-        transactions: state.transactions,
+        transactions,
         addTransaction,
         deleteTransaction,
       }}>

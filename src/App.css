@@ -6,18 +6,14 @@
   padding: 0;
 }
 
-.app{
-  width: 500px;
-}
-
 .label-success{
-  box-shadow: inset 5px 0px 0px 0px var(--bs-success);
+  box-shadow: inset 5px 0px 0px 0px var(--bs-success) !important;
 }
 
 .label-danger{
-  box-shadow: inset 5px 0px 0px 0px var(--bs-danger);
+  box-shadow: inset 5px 0px 0px 0px var(--bs-danger) !important;
 }
 
 .label-secondary{
-  box-shadow: inset 5px 0px 0px 0px var(--bs-secondary);
+  box-shadow: inset 5px 0px 0px 0px var(--bs-secondary) !important;
 }

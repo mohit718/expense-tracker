@@ -7,13 +7,20 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="d-flex flex-column justify-content-center">
-      <div className="mx-auto p-2 app text-center">
-        <Header/>
-        <Balance/>
-        <ProfitAndLoss/>
-        <TransactionList/>
-        <TransactionForm/>
+    <div className="container">
+      <div className="row p-2">
+        <div className="col-12 d-md-block d-flex justify-content-center">
+          <Header />
+        </div>
+        <div className="col-12 col-md-4">
+          <TransactionForm />
+        </div>
+        <div className="col-md-1"></div>
+        <div className="col-12 col-md-7 d-flex flex-column justify-content-center">
+          <Balance />
+          <ProfitAndLoss />
+          <TransactionList />
+        </div>
       </div>
     </div>
   );
